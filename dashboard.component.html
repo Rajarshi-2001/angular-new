@@ -1,0 +1,30 @@
+<p style="color: aqua;font-size:40px;padding-left: 45%;"><strong>Dashboard</strong></p>
+<div class="highest-salary">
+  Highest Salary: {{ highestSalary?.name }} - {{ highestSalary?.salary }}
+</div>
+
+<p-table [value]="employees" class="center-table">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th pSortableColumn="salary">Salary <p-sortIcon field="salary"></p-sortIcon></th>
+      
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-employee let-rowIndex="rowIndex">
+    <tr>
+        <div *ngFor="let employee of employees; let i = index">
+            <input [(ngModel)]="employee.name" placeholder="Name">
+            <input [(ngModel)]="employee.position" placeholder="Position">
+            <input [(ngModel)]="employee.salary" placeholder="Salary" type="number">
+          </div>
+          
+      <td><input type="number" [(ngModel)]="employee.salary" (ngModelChange)="updatehighestSalary()"></td>
+      <td>
+        <button (click) ="editEmployee(rowIndex)">Edit</button>
+        <button (click)="deleteEmployee(rowIndex)">Delete</button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
