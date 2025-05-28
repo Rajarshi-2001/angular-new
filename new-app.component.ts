@@ -11,7 +11,7 @@ import { PopupComponent } from '../popup/popup.component';
   standalone: true
 })
 export class NewAppComponent {
-  username: string = '';
+  username: string = 'Rajarshi';
   password: string='';
   showPopup: boolean = false;
 
