@@ -11,9 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class PopupComponent {
    @Input() username!:string ;
    @Input() password!: string;
-   @Output() cl= new EventEmitter<void>();
-   onclose(){
-    this.cl.emit();
+   
    }
 }
 
