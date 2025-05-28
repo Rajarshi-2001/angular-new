@@ -12,11 +12,16 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements OnInit  {
 [x: string]: any;
 
-employees = [
+
+employees= [
   { name: 'Alice', position: 'Developer', salary: 50000 },
   { name: 'Raja', position: 'Designer', salary: 45000 },
   { name: 'Raju', position: 'Architecht', salary: 40000 },
-  { name: 'Babu', position: 'Designer', salary: 35000 }
+  { name: 'Babu', position: 'Designer', salary: 35000 },
+  { name: 'Alik', position: 'Developer', salary: 25000 },
+  { name: 'Ranu', position: 'Designer', salary: 16000 },
+  { name: 'Ram', position: 'Architecht', salary: 15000 },
+  { name: 'Babloo', position: 'Designer', salary: 12000 }
 ];
 
 highestSalary:any;
@@ -30,9 +35,17 @@ updatehighestSalary(){
   );
 }
 
-editEmployee(index:number){
+editingID: number | null = null;
+
+editEmployee(index: number) {
+  this.editingID = index;
+}
+
+saveEmployee() {
+  this.editingID = null;
   this.updatehighestSalary();
 }
+
 deleteEmployee(index: number){
   this.employees.splice(index,1);
   this.updatehighestSalary();
