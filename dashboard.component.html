@@ -17,7 +17,9 @@
         <td><input [(ngModel)]="employee.name" placeholder="Name"></td>
         <td><input [(ngModel)]="employee.position" placeholder="Position"></td>
         <td><input [(ngModel)]="employee.salary" placeholder="Salary" type="number"></td>
-
+<td>
+  <input type="number" [(ngModel)]="employee.salary" (ngModelChange)="updateHighestSalary()" />
+</td>
       <td>
         <button (click) ="editEmployee(rowIndex)">Edit</button>
         <button (click)="deleteEmployee(rowIndex)">Delete</button>
