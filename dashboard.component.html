@@ -14,13 +14,10 @@
   </ng-template>
   <ng-template pTemplate="body" let-employee let-rowIndex="rowIndex">
     <tr>
-        <div *ngFor="let employee of employees; let i = index">
-            <input [(ngModel)]="employee.name" placeholder="Name">
-            <input [(ngModel)]="employee.position" placeholder="Position">
-            <input [(ngModel)]="employee.salary" placeholder="Salary" type="number">
-          </div>
-          
-      <td><input type="number" [(ngModel)]="employee.salary" (ngModelChange)="updatehighestSalary()"></td>
+        <td><input [(ngModel)]="employee.name" placeholder="Name"></td>
+        <td><input [(ngModel)]="employee.position" placeholder="Position"></td>
+        <td><input [(ngModel)]="employee.salary" placeholder="Salary" type="number"></td>
+
       <td>
         <button (click) ="editEmployee(rowIndex)">Edit</button>
         <button (click)="deleteEmployee(rowIndex)">Delete</button>
