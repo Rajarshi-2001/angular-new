@@ -11,14 +11,11 @@ import { PopupComponent } from '../popup/popup.component';
   standalone: true
 })
 export class NewAppComponent {
-  username: string = 'Rajarshi';
+  username: string = '';
   password: string='';
   showPopup: boolean = false;
 
   onLogin() {
     this.showPopup = true;
-  }
-  Logout(){
-    this.showPopup= false;
   }
 }
