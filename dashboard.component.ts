@@ -34,7 +34,8 @@ updatehighestSalary(){
     (prev.salary > current.salary) ? prev : current
   );
 }
-
+newName = '';
+newSalary: number | null = null;
 editingID: number | null = null;
 
 editEmployee(index: number) {
@@ -50,5 +51,26 @@ deleteEmployee(index: number){
   this.employees.splice(index,1);
   this.updatehighestSalary();
 }
+newPosition='';
+addEmployee() {
+  if (this.newSalary !== null){
+  const newEmployee = {
+    name: this.newName,
+    position: this.newPosition,
+    salary: this.newSalary
+  
+  };
+
+  this.employees.push(newEmployee);
+
+  // Clear input fields
+  this.newName = '';
+  this.newPosition = '';
+  this.newSalary = null;
+
+  this.updatehighestSalary();
+}
+}
+
 
 }
