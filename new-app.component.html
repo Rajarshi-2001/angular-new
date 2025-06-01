@@ -1,4 +1,5 @@
 
+
 <div class="login-container">
     <h2>Login</h2>
     <input type="text"[(ngModel)]="username" placeholder="Username" />
@@ -6,4 +7,9 @@
     <button (click)="onLogin()">Login</button>
   </div>
   
+  <app-popup (click)="Logout()" *ngIf="showPopup" [username]="username" [password]="password"></app-popup>
+  
+
+
+
   
